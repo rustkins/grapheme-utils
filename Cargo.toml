@@ -1,0 +1,19 @@
+[package]
+name = "grapheme-utils"
+authors = ["rustkin"]
+categories = ["text-processing"]
+description = "Handy utils for working with utf-8 [unicode] Extended Grapheme Clusters"
+documentation = "https://docs.rs/grapheme-utils"
+include = ["Cargo.toml", "src/**/*.rs", "README.md", "LICENSE"]
+keywords = ["Grahemes", "unicode", "width"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/rustkins/grapheme-utils"
+version = "0.1.0"
+edition = "2024"
+
+
+
+[dependencies]
+unicode-segmentation = "1.12.0"
+unicode-width = "0.2.1"
