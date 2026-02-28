@@ -1,31 +1,17 @@
 # Grapheme Utils
-Handy Robust Utils for Extended Grapheme Clusters
+Robust Grapheme Utils to make working with Extended Grapheme Clusters nearly as easy as working with Ascii only strings. See Async-Editor an example of a Grapheme enabled editor.
 
 ## What is this?
 
-Grapheme Utils are a collection of handy utilities to make working with Extended Grapheme Clusters as straight-forward as possible.
+Grapheme Utils are a collection of handy utilities to make working with Extended Grapheme Clusters, measuring character widths, and examining the previous, current or next grapheme cluster or string index as straight-forward as possible.
 
 **Note**: Ease of use over Ideomatic Rust
 
-This code will return a "" grapheme or an index past the end of the string instead of None, etc.
+This code will return a "" grapheme or an index past the end of the string instead of None. Instead of testing for None, test for .len() == 0 for example.
 
-I find it much more convenient when working with text to concatenate "" stings more convenient than checking and handling None for example.
+**Note**: This code is very forgiving, and handles any index values that hits any part of a grapheme cluster as though it pointed at the beginning.
 
-You can easily test if a string is None (or len() == 0 when necessary.
-
-**Note**: This code is a purposefully forgiving.
-
-Many unicode libraries are sensitive to indexed at points not the exact start of a grapheme cluster. 
-
-In fact your rust code may well panic instead of returning an error.
-
-This code is very forgiving, and handles any index values that hits any part of a grapheme cluster as though it pointed at the beginning.
-In other words, this library ignores any issues that would be caused by illegal index references.
-
-**Note**: Utf-8 Has many very special modes, reverse or downward text for example.
-
-This crate has not been tested with any special unicode modes.
-
+**Note**: This crate has not been tested with any of the very special unicode Utf-8 modes like reverse or downward text.
 
 ## Example Usage
 
@@ -105,7 +91,7 @@ Add `grapheme-utils` to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-grapheme-utils = "0.1.0"
+grapheme-utils = "0.1"
 ```
 
 Then, include it in your Rust project:
